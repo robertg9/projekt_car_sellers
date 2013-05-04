@@ -1,0 +1,14 @@
+﻿@model IEnumerable<projekt_car_sellers.Models.marki>
+
+<div id="lewa-kolumna">
+    <div id="marki-lista">
+        <ul>
+            <li>Marka</li>
+            @foreach (var item in Model) {
+                <li>
+                    <a href="?marka=@Html.DisplayFor(modelItem => item.id)">@Html.DisplayFor(modelItem => item.nazwa)</a>
+                </li>     
+            }
+        </ul>
+    </div>
+</div>
