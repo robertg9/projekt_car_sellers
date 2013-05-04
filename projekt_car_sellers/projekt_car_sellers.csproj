@@ -180,6 +180,18 @@
     <Compile Include="Migrations\201305031524445_InitialMigrations1.Designer.cs">
       <DependentUpon>201305031524445_InitialMigrations1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201305041344025_InitialMigrations2.cs" />
+    <Compile Include="Migrations\201305041344025_InitialMigrations2.Designer.cs">
+      <DependentUpon>201305041344025_InitialMigrations2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305041346475_InitialMigrations3.cs" />
+    <Compile Include="Migrations\201305041346475_InitialMigrations3.Designer.cs">
+      <DependentUpon>201305041346475_InitialMigrations3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305041404272_InitialMigrations4.cs" />
+    <Compile Include="Migrations\201305041404272_InitialMigrations4.Designer.cs">
+      <DependentUpon>201305041404272_InitialMigrations4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\lokalizacja.cs" />
@@ -318,6 +330,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201305031524445_InitialMigrations1.resx">
       <DependentUpon>201305031524445_InitialMigrations1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305041344025_InitialMigrations2.resx">
+      <DependentUpon>201305041344025_InitialMigrations2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305041346475_InitialMigrations3.resx">
+      <DependentUpon>201305041346475_InitialMigrations3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305041404272_InitialMigrations4.resx">
+      <DependentUpon>201305041404272_InitialMigrations4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -36,6 +36,8 @@ namespace projekt_car_sellers.Migrations
             seed_region();
             seed_lokalizacja();
 
+            seed_ogloszenia();
+
         }
 
         private void seed_model()
@@ -170,7 +172,7 @@ namespace projekt_car_sellers.Migrations
 
         private void seed_lokalizacja()
         {
-            System.Data.Entity.Database.SetInitializer<projekt_car_sellers.Models.regionContext>(null);
+            System.Data.Entity.Database.SetInitializer<projekt_car_sellers.Models.lokalizacjaContext>(null);
 
             lokalizacjaContext lokalizacjaCont = new lokalizacjaContext();
 
@@ -198,6 +200,7 @@ namespace projekt_car_sellers.Migrations
 
         private int pobierz_id_uzytkownik(string nazwa)
         {
+            System.Data.Entity.Database.SetInitializer<projekt_car_sellers.Models.UsersContext>(null);
             int id_uzytkownik = 0;
             UsersContext uzytkownikContext = new UsersContext();
 

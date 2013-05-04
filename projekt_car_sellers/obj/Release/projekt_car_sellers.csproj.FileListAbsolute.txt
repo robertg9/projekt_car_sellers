@@ -51,3 +51,6 @@ C:\Users\X\Documents\Visual Studio 2012\Projects\projekt_car_sellers\projekt_car
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.bazaDanych.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations1.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations2.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations3.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations4.resources
