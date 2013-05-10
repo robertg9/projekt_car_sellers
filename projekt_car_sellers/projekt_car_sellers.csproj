@@ -192,8 +192,13 @@
     <Compile Include="Migrations\201305041404272_InitialMigrations4.Designer.cs">
       <DependentUpon>201305041404272_InitialMigrations4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201305051159135_InitialMigrations5.cs" />
+    <Compile Include="Migrations\201305051159135_InitialMigrations5.Designer.cs">
+      <DependentUpon>201305051159135_InitialMigrations5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\all_models.cs" />
     <Compile Include="Models\lokalizacja.cs" />
     <Compile Include="Models\marki.cs" />
     <Compile Include="Models\model.cs" />
@@ -339,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201305041404272_InitialMigrations4.resx">
       <DependentUpon>201305041404272_InitialMigrations4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305051159135_InitialMigrations5.resx">
+      <DependentUpon>201305051159135_InitialMigrations5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

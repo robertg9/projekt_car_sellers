@@ -14,11 +14,25 @@ namespace projekt_car_sellers.Controllers
 
         public ActionResult Index()
         {
-            markiContext markiCont = new markiContext();
+            //regionContext ogloszeniaCont = new regionContext();
+            //ogloszeniaContext ogloszeniaCont = new ogloszeniaContext();
+            //markiContext markiCont = new markiContext();
+            //ogloszeniaContext ogloszeniaCont = new ogloszeniaContext();
 
-            var marki = markiCont.markiDb.ToList();
+            //ViewBag.ogloszenia = ogloszeniaCont;
 
-            return View(marki);
+            //ViewBag.marki = markiCont.markiDb.ToList();
+            //var ogloszenia = ogloszeniaCont.ogloszeniaDb.ToList();
+
+            //ViewBag.ogloszenia = ogloszeniaCont.ogloszeniaDb.ToList();
+           
+            //var model = ogloszeniaCont.regionDb.ToList();
+
+            var viewModel = new all_models();
+            ViewBag.ogloszenia = viewModel.wszystkie_ogloszenia;
+            ViewBag.marki = viewModel.wszystkie_marki;
+
+            return View();
         }
 
     }

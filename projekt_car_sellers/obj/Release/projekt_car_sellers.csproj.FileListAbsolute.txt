@@ -47,10 +47,11 @@ c:\users\x\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car
 c:\users\x\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.dll
 c:\users\x\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.pdb
 C:\Users\X\Documents\Visual Studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.csproj.GenerateResource.Cache
-C:\Users\X\Documents\Visual Studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.csprojResolveAssemblyReference.cache
-C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.bazaDanych.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations1.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations2.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations3.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations4.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.InitialMigrations5.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.Migrations.bazaDanych.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Release\projekt_car_sellers.csprojResolveAssemblyReference.cache

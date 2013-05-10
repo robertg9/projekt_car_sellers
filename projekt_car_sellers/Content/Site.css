@@ -7,7 +7,7 @@
 body {
     background-color: #fff;
     border-top: solid 10px #000;
-    color: #fff;
+    color: #000;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
@@ -784,10 +784,21 @@ tr.pager td {
     background-color: #e2e2e2;
 }
 
-#lewa-kolumna {
+#ogloszenia-lista {
+    float: left;
     height: 100%;
     background-color: #e2e2e2;
     width: 50px;
 }
 
+#ogloszenia-lista {
+    width: 750px;
+    float:right;
+}
+#lewa-kolumna {
+    width: 200px;
+}
 
+#lewa-kolumna ul {
+    float: left;
+}

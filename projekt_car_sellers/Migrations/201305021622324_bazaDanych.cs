@@ -8,6 +8,7 @@ namespace projekt_car_sellers.Migrations
     {
         public override void Up()
         {
+
             CreateTable(
                 "dbo.region",
                 r => new
@@ -31,8 +32,7 @@ namespace projekt_car_sellers.Migrations
                 {
                     id = m.Int(nullable: false, identity: true),
                     nazwa = m.String(maxLength: 100),
-            });
-            AddPrimaryKey("marki", "id");
+            }).PrimaryKey(m => m.id); ;
 
             CreateTable(
                 "dbo.model",
