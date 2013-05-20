@@ -1,5 +1,9 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using System.Linq
+@using projekt_car_sellers.Models
+@model IEnumerable<projekt_car_sellers.Models.ogloszenieZdjecia>
+
+@{
+    ViewBag.Title = "Projekt Car Sellers";
 }
 @section featured {
     <section class="featured">
@@ -43,3 +47,22 @@
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
     </li>
 </ol>
+<div id="sidebar">
+    <div id="ogloszenia-lista">
+        <h3>Last Ad's</h3>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="/ogloszenia/podglad/?id=@item.id" class="zdjecie">
+                        <img src="@item.url" alt="ogloszenie" class="zdjecie"/>
+                    </a>
+                    <div class="podpis">
+                        <a href="/ogloszenia/podglad/?id=@item.id" class="tytul">@item.tytul</a>
+                    </div>
+                </li>
+            }
+        </ul>
+        <a class="btn btn-primary" id="see-more" href="/ogloszenia/">See More ad's >>></a>
+    </div>
+</div>

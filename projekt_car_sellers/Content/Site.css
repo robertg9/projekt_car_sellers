@@ -760,14 +760,17 @@ tr.pager td {
     text-align: center;
     font-size: small;
     list-style-type: none;
+    cursor:none;
 }
 
 #marki-lista li {
     width: 120px;
     height : 20px;
     background-color: #c8c8c8;
-    border-bottom: solid;
+    border-bottom: 1px solid;
     background-color: #fff;
+    cursor:pointer;
+    list-style: none;
 }
 
 #marki-lista li a {
@@ -800,5 +803,20 @@ tr.pager td {
 }
 
 #lewa-kolumna ul {
+    float: left;
+}
+
+#ogloszenia-lista li {
+    list-style: none;
+    float: left;
+    margin-bottom: 10px;
+    height: 150px;
+    width: 600px;
+    background-color: #fff;
+}
+
+.zdjecie {
+    width: 100px;
+    height: 100px;
     float: left;
 }

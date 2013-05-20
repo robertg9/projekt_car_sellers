@@ -9,13 +9,8 @@ using System.Web.Security;
 
 namespace projekt_car_sellers.Models
 {
-    public class lokalizacjaContext : DbContext
+    public class lokalizacjaContext : zdjeciaContext
     {
-        public lokalizacjaContext()
-            : base("DefaultConnection")
-        {
-        }
-
         public DbSet<lokalizacja> lokalizacjaDb { get; set; }
     }
 

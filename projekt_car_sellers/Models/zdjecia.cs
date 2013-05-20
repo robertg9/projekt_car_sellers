@@ -9,13 +9,8 @@ using System.Web.Security;
 
 namespace projekt_car_sellers.Models
 {
-    public class zdjeciaContext : DbContext
+    public class zdjeciaContext : regionContext
     {
-        public zdjeciaContext()
-            : base("DefaultConnection")
-        {
-        }
-
         public DbSet<zdjecia> zdjeciaDb { get; set; }
     }
 

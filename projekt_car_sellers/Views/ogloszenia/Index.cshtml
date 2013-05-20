@@ -1,4 +1,8 @@
-﻿<div id="lewa-kolumna">
+﻿@using System.Linq
+@using projekt_car_sellers.Models
+@model IEnumerable<projekt_car_sellers.Models.ogloszenieZdjecia>
+
+<div id="lewa-kolumna">
     <div id="marki-lista">
         <ul>
             <li>Marka</li>
@@ -13,12 +17,14 @@
 
 <div id="ogloszenia-lista">
     <ul>
-        <li>Ogloszenia</li>
-        @foreach (var item in ViewBag.ogloszenia) {
+        @foreach (var item in Model)
+        {
             <li>
-                <p>@item.id</p>
-                <p>@item.opis</p>
-            </li>     
+                <a href="/ogloszenia/podglad/?id=@item.id" class="zdjecie">
+                    <img src="@item.url" alt="ogloszenie" class="zdjecie"/>
+                </a>
+                <a href="/ogloszenia/podglad/?id=@item.id" class="tytul">@item.tytul</a>
+            </li>
         }
     </ul>
 </div>

@@ -14,26 +14,23 @@ namespace projekt_car_sellers.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            markiContext db = new markiContext();
-            var marka = new model();
-            /*
-            db.markiDb.First();
-            using (var marki = new markiContext())
-            {
-                var nazwa = "";
-                foreach (var blog in marki.markiDb)
-                {
-                    nazwa = blog.nazwa;
-                }
-            }
-          
-            int id_marka = 0;
-            markiContext markiCont = new markiContext();
+            var viewModel = new all_models();
 
-            var marki = markiCont.markiDb.Where(x => x.nazwa == "BMW").First();
-            id_marka = marki.id;
-             */
-            return View();
+            ViewBag.marki = viewModel.wszystkie_marki;
+
+            var query = (from o in viewModel.ogloszeniaDb
+                        join z in viewModel.zdjeciaDb on o.id equals z.id
+                        select new ogloszenieZdjecia()
+                        {
+                            id = o.id,
+                            tytul = o.tytul,
+                            url = z.url,
+                            rocznik = o.rocznik,
+                            przebieg = o.przebieg,
+                            pojemnoscSilnika = o.pojemnoscSilnika,
+                            rodzajPaliwa = o.rodzajPaliwa
+                        }).Take(2).ToList();
+            return View(query);
         }
 
         public ActionResult About()

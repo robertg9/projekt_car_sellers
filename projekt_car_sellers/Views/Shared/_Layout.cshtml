@@ -5,24 +5,30 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
+       
+        @Styles.Render("~/Content/bs")
+        @Styles.Render("~/Content/bsr")
+        @Styles.Render("~/Content/cs")
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
         <header>
-            <div class="content-wrapper">
+            <div class="content-wrapper naglowek">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title"><img src="~/Content/themes/base/images/logo.jpg" title="logo" /></p>
                 </div>
                 <div class="float-right">
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
                     <nav>
+                        <div id="search-car">
+                            <input value="Find your car" id="search" class="input-large" />
+                        </div>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li class="btn btn-primary">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="btn btn-primary">@Html.ActionLink("About", "About", "Home")</li>
+                            <li class="btn btn-primary">@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>
                     </nav>
                 </div>
@@ -34,10 +40,10 @@
                 @RenderBody()
             </section>
         </div>
-        <footer>
+        <footer class="navbar-inner">
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    <p>&copy; @DateTime.Now.Year - Car Sellers MVC Application</p>
                 </div>
             </div>
         </footer>

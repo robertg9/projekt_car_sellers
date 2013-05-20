@@ -1,0 +1,110 @@
+﻿/**
+ * naglowek
+ */
+
+.content-wrapper {
+    width: 1024px;
+    margin: auto;
+}
+
+#registerLink {
+    color: #fff;
+}
+
+#loginLink {
+    color: #fff;
+}
+
+#login {
+    float: right;
+}
+
+.naglowek {
+    border-bottom: 3px solid;
+    border-bottom-color: #990099;
+    margin-bottom: 40px;
+}
+
+.site-title {
+    width: 300px;
+}
+
+#menu {
+    float: right;
+    color: #fff;
+    margin-right: 40px;
+}
+
+#see-more,
+#menu li {
+    float: right;
+    margin-left: 1px;
+    background-color: #FFCC33;
+    background-image: linear-gradient(to bottom, #FFCC33, #FFCC33);
+}
+
+    #menu li a {
+        color: #fff;
+    }
+
+#search-car {
+    background-color: #990099;
+    float: left;
+    height: 25px;
+    margin-top: 3px;
+    width: 222px;
+}
+
+#search {
+    margin-left: 3px;
+}
+
+/*
+    Home    Indesx
+*/
+.round {
+    width: 650px;
+    float: left;
+}
+
+/*footer*/
+footer {
+    bottom: 0;
+    float: right;
+    height: 30px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+/*SIDEBAR*/
+
+#sidebar {
+    width: 300px;
+    float: right;
+    border-left: 3px solid;
+    border-color: #FFCC33;
+}
+
+#ogloszenia-lista .podpis {
+    overflow: hidden;
+	margin: auto;
+	background: #990099;
+	opacity: 0.8;
+    height: 40px;
+    position: relative;
+    top: -40px;
+}
+
+    #ogloszenia-lista .podpis a {
+        color: #fff;
+    }
+
+#ogloszenia-lista li {
+    list-style: none;
+}
+
+#ogloszenia-lista h3 {
+    margin-left: 23px;
+}
+

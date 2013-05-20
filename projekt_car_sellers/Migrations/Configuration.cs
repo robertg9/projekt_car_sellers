@@ -12,7 +12,7 @@ namespace projekt_car_sellers.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(projekt_car_sellers.Models.modelContext context)
@@ -37,6 +37,7 @@ namespace projekt_car_sellers.Migrations
             seed_lokalizacja();
 
             seed_ogloszenia();
+            seed_zdjecia();
 
         }
 
@@ -188,6 +189,27 @@ namespace projekt_car_sellers.Migrations
             lokalizacjaCont.SaveChanges();
         }
 
+        private void seed_zdjecia()
+        {
+            System.Data.Entity.Database.SetInitializer<projekt_car_sellers.Models.zdjeciaContext>(null);
+
+            zdjeciaContext zdjeciaCont = new zdjeciaContext();
+
+            int id_ogloszenie = pobierz_id_ogloszenie(2012);
+            int id_ogloszenie2 = pobierz_id_ogloszenie(2002);
+            var link1 = "http://upload.wikimedia.org/wikipedia/commons/8/8d/Audi_A4_B8_front_20080414.jpg";
+            var link2 = "http://gtoss.com/wp-content/uploads/2013/04/Audi-a4-590-189813.jpeg";
+            zdjecia[] zdjecia_wszystkie = new zdjecia[] {
+                new zdjecia{ id = 1, url = link1, FK_ogloszenia = id_ogloszenie },
+                new zdjecia{ id = 2, url = link2, FK_ogloszenia = id_ogloszenie2 },
+            };
+
+            zdjeciaCont.zdjeciaDb.AddOrUpdate(zdjecia_wszystkie);
+
+            zdjeciaCont.SaveChanges();
+
+        }
+
         private int pobierz_id_region(string nazwa)
         {
             int id_region = 0;
@@ -227,6 +249,16 @@ namespace projekt_car_sellers.Migrations
             var model = modelCont.modelDb.Where(x => x.nazwa == nazwa_marki).First();
             id_model = model.id;
             return id_model;
+        }
+
+        private int pobierz_id_ogloszenie(int rocznik)
+        {
+            int id_ogloszenie = 0;
+            ogloszeniaContext ogloszeniaCont = new ogloszeniaContext();
+
+            var ogloszenie = ogloszeniaCont.ogloszeniaDb.Where(x => x.rocznik == rocznik).First();
+            id_ogloszenie = ogloszenie.id;
+            return id_ogloszenie;
         }
     }
 }

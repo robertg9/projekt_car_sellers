@@ -9,13 +9,8 @@ using System.Web.Security;
 
 namespace projekt_car_sellers.Models
 {
-    public class modelContext : DbContext
+    public class modelContext : markiContext
     {
-        public modelContext()
-            : base("DefaultConnection")
-        {
-        }
-
         public DbSet<model> modelDb { get; set; }
     }
 

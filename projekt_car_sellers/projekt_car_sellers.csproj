@@ -172,29 +172,9 @@
     <Compile Include="Migrations\201305021622324_bazaDanych.Designer.cs">
       <DependentUpon>201305021622324_bazaDanych.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201305031243429_InitialMigrations.cs" />
-    <Compile Include="Migrations\201305031243429_InitialMigrations.Designer.cs">
-      <DependentUpon>201305031243429_InitialMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201305031524445_InitialMigrations1.cs" />
-    <Compile Include="Migrations\201305031524445_InitialMigrations1.Designer.cs">
-      <DependentUpon>201305031524445_InitialMigrations1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201305041344025_InitialMigrations2.cs" />
-    <Compile Include="Migrations\201305041344025_InitialMigrations2.Designer.cs">
-      <DependentUpon>201305041344025_InitialMigrations2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201305041346475_InitialMigrations3.cs" />
-    <Compile Include="Migrations\201305041346475_InitialMigrations3.Designer.cs">
-      <DependentUpon>201305041346475_InitialMigrations3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201305041404272_InitialMigrations4.cs" />
-    <Compile Include="Migrations\201305041404272_InitialMigrations4.Designer.cs">
-      <DependentUpon>201305041404272_InitialMigrations4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201305051159135_InitialMigrations5.cs" />
-    <Compile Include="Migrations\201305051159135_InitialMigrations5.Designer.cs">
-      <DependentUpon>201305051159135_InitialMigrations5.cs</DependentUpon>
+    <Compile Include="Migrations\201305151957240_zmiany.cs" />
+    <Compile Include="Migrations\201305151957240_zmiany.Designer.cs">
+      <DependentUpon>201305151957240_zmiany.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -203,11 +183,16 @@
     <Compile Include="Models\marki.cs" />
     <Compile Include="Models\model.cs" />
     <Compile Include="Models\ogloszenia.cs" />
+    <Compile Include="Models\ogloszeniaZdjecia.cs" />
     <Compile Include="Models\region.cs" />
     <Compile Include="Models\zdjecia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\car_sellers.css" />
+    <Content Include="Content\themes\base\images\logo.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -330,23 +315,8 @@
     <EmbeddedResource Include="Migrations\201305021622324_bazaDanych.resx">
       <DependentUpon>201305021622324_bazaDanych.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201305031243429_InitialMigrations.resx">
-      <DependentUpon>201305031243429_InitialMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201305031524445_InitialMigrations1.resx">
-      <DependentUpon>201305031524445_InitialMigrations1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201305041344025_InitialMigrations2.resx">
-      <DependentUpon>201305041344025_InitialMigrations2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201305041346475_InitialMigrations3.resx">
-      <DependentUpon>201305041346475_InitialMigrations3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201305041404272_InitialMigrations4.resx">
-      <DependentUpon>201305041404272_InitialMigrations4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201305051159135_InitialMigrations5.resx">
-      <DependentUpon>201305051159135_InitialMigrations5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201305151957240_zmiany.resx">
+      <DependentUpon>201305151957240_zmiany.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
