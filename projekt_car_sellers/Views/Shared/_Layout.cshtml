@@ -26,9 +26,18 @@
                             <input value="Find your car" id="search" class="input-large" />
                         </div>
                         <ul id="menu">
-                            <li class="btn btn-primary">@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li class="btn btn-primary">@Html.ActionLink("About", "About", "Home")</li>
-                            <li class="btn btn-primary">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li class="btn btn-primary">
+                                @Html.ActionLink("Home", "Index", "Home")
+                                <i class="icon-home"></i>
+                            </li>
+                            <li class="btn btn-primary">
+                                @Html.ActionLink("About", "About", "Home")
+                                <i class="icon-star"></i>
+                            </li>
+                            <li class="btn btn-primary">
+                                @Html.ActionLink("Contact", "Contact", "Home")
+                                <i class="icon-book"></i>
+                            </li>
                         </ul>
                     </nav>
                 </div>

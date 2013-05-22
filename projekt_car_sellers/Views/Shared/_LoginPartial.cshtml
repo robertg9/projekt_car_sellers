@@ -8,7 +8,13 @@
     </text>
 } else {
     <ul>
-        <li class="btn btn-primary">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li class="btn btn-primary">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li class="btn btn-primary">
+            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+            <i class="icon-file icon-white"></i>
+        </li>
+        <li class="btn btn-primary">
+            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            <i class="icon-user icon-white"></i>
+        </li>
     </ul>
 }

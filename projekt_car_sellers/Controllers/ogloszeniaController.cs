@@ -30,8 +30,10 @@ namespace projekt_car_sellers.Controllers
                             rocznik = o.rocznik,
                             przebieg = o.przebieg,
                             pojemnoscSilnika = o.pojemnoscSilnika,
-                            rodzajPaliwa = o.rodzajPaliwa
-                        }).ToList();
+                            rodzajPaliwa = o.rodzajPaliwa,
+                            typNadwozia = o.typNadwozia,
+                            cena = o.cena
+                        }).Take(5).ToList();
             return View(query);
 
         }

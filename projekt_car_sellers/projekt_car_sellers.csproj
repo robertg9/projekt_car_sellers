@@ -176,6 +176,14 @@
     <Compile Include="Migrations\201305151957240_zmiany.Designer.cs">
       <DependentUpon>201305151957240_zmiany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201305221242489_test.cs" />
+    <Compile Include="Migrations\201305221242489_test.Designer.cs">
+      <DependentUpon>201305221242489_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305221306048_test1.cs" />
+    <Compile Include="Migrations\201305221306048_test1.Designer.cs">
+      <DependentUpon>201305221306048_test1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\all_models.cs" />
@@ -250,6 +258,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="img\Chrysanthemum.jpg" />
+    <Content Include="img\Desert.jpg" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\Hydrangeas.jpg" />
+    <Content Include="img\Penguins.jpg" />
+    <Content Include="img\Tulips.jpg" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -317,6 +332,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201305151957240_zmiany.resx">
       <DependentUpon>201305151957240_zmiany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305221242489_test.resx">
+      <DependentUpon>201305221242489_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305221306048_test1.resx">
+      <DependentUpon>201305221306048_test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

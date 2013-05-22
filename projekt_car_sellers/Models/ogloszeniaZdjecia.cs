@@ -14,6 +14,8 @@ namespace projekt_car_sellers.Models
         public int przebieg { get; set; }
         public int pojemnoscSilnika { get; set; }
         public string rodzajPaliwa { get; set; }
+        public decimal cena { get; set; }
+        public string typNadwozia { get; set; }
 
     }
 }

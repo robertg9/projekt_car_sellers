@@ -2,6 +2,14 @@
  * naglowek
  */
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
 .content-wrapper {
     width: 1024px;
     margin: auto;
@@ -35,6 +43,7 @@
     margin-right: 40px;
 }
 
+.first-li,
 #see-more,
 #menu li {
     float: right;
@@ -67,6 +76,18 @@
     float: left;
 }
 
+.icon-home {
+    margin-left: 10px;
+}
+
+.icon-star {
+    margin-left: 10px;
+}
+
+.icon-book {
+    margin-left: 10px;
+}
+
 /*footer*/
 footer {
     bottom: 0;
@@ -84,6 +105,7 @@ footer {
     float: right;
     border-left: 3px solid;
     border-color: #FFCC33;
+    margin-bottom: 130px;
 }
 
 #ogloszenia-lista .podpis {
@@ -108,3 +130,151 @@ footer {
     margin-left: 23px;
 }
 
+#ogloszenia-lista img:hover {
+    opacity: 0.8;
+}
+
+#info {
+    text-align: center;
+    width: 100%;
+    margin-top: 60px;
+}
+
+/*LISTA MAREK*/
+
+#marki-lista {
+    margin-bottom: 1100px;
+}
+
+#lewa-kolumna {
+    float: left;
+    width: 100px;
+    margin-top: 40px;
+}
+
+    #lewa-kolumna li {
+        list-style: none;
+        float: left;
+        width: 100px;
+        height: 20px;
+    }
+
+        #lewa-kolumna li a {
+            color: #fff;
+            float: left;
+        }
+
+    #lewa-kolumna .icon-th-large {
+        float: right;
+    }
+
+/* LISTA OGLOSZEN*/
+
+#ogloszenia-lista-duza {
+    float: right;
+    width: 850px;
+    margin-top: 50px;
+    border: 1px solid;
+    border-color: #d7d7d7;
+}
+
+    #ogloszenia-lista-duza li {
+        list-style: none;
+    }
+
+    #ogloszenia-lista-duza img {
+        width: 200px;
+        height: 150px;
+    }
+
+    #ogloszenia-lista-duza .ogloszenie {
+        width: 750px;
+        height: 160px;
+        margin-top: 10px;
+        border-bottom: 5px solid;
+        border-bottom-color: #FFCC33;
+    }
+
+    #ogloszenia-lista-duza .zdjecie {
+        float: left;
+    }
+
+    #ogloszenia-lista-duza .tytul {
+        float: left;
+    }
+
+    #ogloszenia-lista-duza .tytul-kontener {
+        border: 2px solid #E6E6E6;
+        margin-left: 120px;
+        overflow: hidden;
+        padding-left: 10px;
+        width: 590px;
+    }
+
+    #ogloszenia-lista-duza .btn {
+        background-color: #E6E6E6;
+        float: left;
+        height: 30px;
+        margin-left: 10px;
+        margin-top: 10px;
+        text-align: center;
+        width: 80px;
+    }
+
+    #ogloszenia-lista-duza .przebiegilosc,
+    #ogloszenia-lista-duza .rodzajPaliwa,
+    #ogloszenia-lista-duza .pojemnoscSilnika,
+    #ogloszenia-lista-duza .rocznik {
+        border: 2px solid #E6E6E6;
+        border-radius: 3px 3px 3px 3px;
+        color: #990099;
+        float: right;
+        height: 23px;
+        left: -8px;
+        margin-left: 0;
+        padding-top: 3px;
+        position: relative;
+        text-align: center;
+        width: 60px;
+    }
+
+    #ogloszenia-lista-duza .rodzajPaliwa {
+        width: 110px;
+    }
+
+    #ogloszenia-lista-duza .belka {
+        width: 160px;
+        float:left;
+    }
+
+    #ogloszenia-lista-duza .paliwo {
+        width: 210px;
+    }
+
+    #ogloszenia-lista-duza .dane {
+         height: 50px;
+         width: 790px;
+    }
+
+    #ogloszenia-lista-duza img:hover {
+        opacity: 0.8;
+    }
+
+    #ogloszenia-lista-duza .cenaBtn {
+        height: 50px;
+    }
+
+    #ogloszenia-lista-duza .cenaBtn:hover {
+        background-color: #FFCC33;
+        background-image: linear-gradient(to bottom, #FFCC33, #FFCC33);
+    }
+
+    #ogloszenia-lista-duza .cenaText {
+        color: #ff4003;
+    }
+
+    #ogloszenia-lista-duza .kupTeraz {
+        float: right;
+        position: relative;
+        right: -65px;
+    }

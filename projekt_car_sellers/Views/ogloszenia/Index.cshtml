@@ -5,25 +5,56 @@
 <div id="lewa-kolumna">
     <div id="marki-lista">
         <ul>
-            <li>Marka</li>
+            <li class="btn btn-primary first-li ">
+                Brand
+                <i class="icon-tasks"></i>
+            </li>
             @foreach (var item in ViewBag.marki) {
-                <li>
-                    <p>@item.nazwa</p>
+                <li class="btn btn-primary">
+                    <a href="/ogloszenia/?id=@item.id">@item.nazwa</a>
+                    <i class="icon-th-large icon-white"></i>
                 </li>     
             }
         </ul>
     </div>
 </div>
 
-<div id="ogloszenia-lista">
+<div id="ogloszenia-lista-duza">
     <ul>
         @foreach (var item in Model)
         {
-            <li>
+            <li class="ogloszenie">
                 <a href="/ogloszenia/podglad/?id=@item.id" class="zdjecie">
                     <img src="@item.url" alt="ogloszenie" class="zdjecie"/>
                 </a>
-                <a href="/ogloszenia/podglad/?id=@item.id" class="tytul">@item.tytul</a>
+                <div class="tytul-kontener">
+                    <a href="/ogloszenia/podglad/?id=@item.id" class="tytul">@item.tytul</a>
+                </div>
+                <div class="dane">
+                    <div class="belka">
+                        <button class="btn">Year</button><h5 class="rocznik">@item.rocznik</h5>
+                    </div>
+                     <div class="belka">
+                        <button class="btn">Mileage</button><h5 class="przebiegilosc">@item.przebieg</h5>
+                    </div>
+                    <div class="belka">
+                        <button class="btn">Capacity</button><h5 class="pojemnoscSilnika">@item.pojemnoscSilnika</h5>
+                    </div>
+                    <div class="belka paliwo">
+                        <button class="btn">Fuel</button><h5 class="rodzajPaliwa">@item.rodzajPaliwa</h5>
+                    </div>
+                    <div class="belka paliwo">
+                        <button class="btn">Type</button><h5 class="rodzajPaliwa">@item.typNadwozia</h5>
+                    </div>
+                </div>
+
+                <div class="kupTeraz">
+                    <a href="/ogloszenia/podglad/?id=@item.id" class="btn btn-success cenaBtn">
+                        <p class="left">Buy now</p>
+                        <i class="icon-shopping-cart icon-white right"></i>
+                        <h5 class="cena">Price  <span class="cenaText">@item.cena</span></h5>
+                    </a>
+                </div>
             </li>
         }
     </ul>

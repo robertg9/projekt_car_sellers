@@ -101,6 +101,21 @@ namespace projekt_car_sellers.Migrations
                 new marki{ nazwa = "Suzuki"},
                 new marki{ nazwa = "Toyota"},
                 new marki{ nazwa = "Volkswagen"},
+
+                new marki{ nazwa = "Acura"},
+                new marki{ nazwa = "GMC"},
+                new marki{ nazwa = "Grecav"},
+                new marki{ nazwa = "Lada"},
+                new marki{ nazwa = "Lancia"},
+                new marki{ nazwa = "Maserati"},
+                new marki{ nazwa = "MG"},
+                new marki{ nazwa = "Microcar"},
+                new marki{ nazwa = "Moskowicz"},
+                new marki{ nazwa = "Nysa"},
+                new marki{ nazwa = "Saab"},
+                new marki{ nazwa = "Saturn"},
+                new marki{ nazwa = "Tolbot"},
+                new marki{ nazwa = "Tech"},
             };
 
             markiCont.markiDb.AddOrUpdate(m => m.nazwa, wszystkie_marki);
@@ -146,6 +161,51 @@ namespace projekt_car_sellers.Migrations
                     pojemnoscSilnika = 2200,
                     rodzajPaliwa = "gaz,benzyna",
                     typNadwozia = "heatchback",
+                },
+                new ogloszenia {
+                    id = 3, 
+                    cena = 16000, 
+                    FK_lokalizacja = id_lokalizacja_gdynia,
+                    FK_model = id_model_audi,
+                    FK_uzytkownik = id_uztkownik,
+                    opis = "Alfa Romeo 147 2.0 T.SPARK, 150 KM, przebieg: 141 000 km wyposa¿enie – pe³ny pakiet (el. szyby, el. lusterka, klimatyzacja automatyczna dwustrefowa, wielofunkcyjna kierownica, tempomat, radio fabryczne, 8 poduszek, komputer, ASR, ESP itp., felgi aluminiowe... nie wiem co tu jeszcze napisac... :) – bez skóry, podgrzewania foteli i nawigacji; w pakiecie komplet opon zimowych na felgach stalowych auto serwisowane w autoryzowanej stacji AR – dostêpna lista napraw, przegl¹dów itp. jestem 2 w³aœcicielem, auto kupione w salonie w Polsce (posiadam wszystkie dokumenty) da³o siê bez wypadków i st³uczek samochód wymaga paru napraw lakierniczych (otarcia, zarysowania) auto zarejestrowane, ubezpieczone, mo¿na ogl¹daæ i targowaæ w Warszawie (Powiœle) po uprzednim kontakcie tel.(+48 600 22 73 73)",
+                    tytul = "Alfa Romeo 147 2.0 T.S. ",
+                    rocznik = 1992,
+                    przebieg = 20000,
+                    mocSilnika = 3999,
+                    pojemnoscSilnika = 3200,
+                    rodzajPaliwa = "benzyna",
+                    typNadwozia = "heatchback",
+                },
+               new ogloszenia {
+                    id = 4, 
+                    cena = 26000, 
+                    FK_lokalizacja = id_lokalizacja_gdynia,
+                    FK_model = id_model_audi,
+                    FK_uzytkownik = id_uztkownik,
+                    opis = "Przedmiotem aukcji jest Mercedesa-Benz A150 benz.2005rok o mocy 95 KM i przebiegu 113,200 tyœ.km.Samochód ten zosta³ sprowadzony z Niemiec,jego stan wizualny jak i mechaniczny oceniam jako BARDZO DOBRY.Jest on op³acony i przygotowany do rejestracji. W razie szczegó³owych pytañ proszê o kontakt pod nr.tel:881-355-173",
+                    tytul = "Mercedes-Benz A 150 2005r,113 tyœ,NAVI.BEZWY,OP£AC ",
+                    rocznik = 1952,
+                    przebieg = 25000,
+                    mocSilnika = 1999,
+                    pojemnoscSilnika = 3300,
+                    rodzajPaliwa = "gaz",
+                    typNadwozia = "kombi",
+                },
+                 new ogloszenia {
+                    id = 5, 
+                    cena = 66000, 
+                    FK_lokalizacja = id_lokalizacja_gdynia,
+                    FK_model = id_model_audi,
+                    FK_uzytkownik = id_uztkownik,
+                    opis = "4x4, el. szyby, el. lusterka, klimatyzacja, tapicerka skórzana, system nawigacji, centralny zamek, radio, wspomaganie kierownicy, komputer, tempomat, podgrzewane fotele, kierownica wielofunkcyjna",
+                    tytul = "Honda CR-V GWARANCJA,EXECUTIVE,NAWIGACJA ",
+                    rocznik = 1972,
+                    przebieg = 15000,
+                    mocSilnika = 1679,
+                    pojemnoscSilnika = 2300,
+                    rodzajPaliwa = "benzyna",
+                    typNadwozia = "kombi",
                 },
             };
 
@@ -197,11 +257,20 @@ namespace projekt_car_sellers.Migrations
 
             int id_ogloszenie = pobierz_id_ogloszenie(2012);
             int id_ogloszenie2 = pobierz_id_ogloszenie(2002);
+            int id_ogloszenie3 = pobierz_id_ogloszenie(1992);
+            int id_ogloszenie4 = pobierz_id_ogloszenie(1952);
+            int id_ogloszenie5 = pobierz_id_ogloszenie(1972);
             var link1 = "http://upload.wikimedia.org/wikipedia/commons/8/8d/Audi_A4_B8_front_20080414.jpg";
             var link2 = "http://gtoss.com/wp-content/uploads/2013/04/Audi-a4-590-189813.jpeg";
+            var link3 = "http://niechwiedza.pl/upload/avatar_user/1360234943d699a2d06f90a5ca78ff2d50760c86a0alfa_romeo_159.jpg";
+            var link4 = "http://www.autoviva.com/img/photos/036/mercedes_benz_a_150_large_5036.jpg";
+            var link5 = "http://img.automobile.de/modellbilder/Honda-CR-V-32877_hon_crv_12_test_1.jpg";
             zdjecia[] zdjecia_wszystkie = new zdjecia[] {
                 new zdjecia{ id = 1, url = link1, FK_ogloszenia = id_ogloszenie },
                 new zdjecia{ id = 2, url = link2, FK_ogloszenia = id_ogloszenie2 },
+                new zdjecia{ id = 3, url = link3, FK_ogloszenia = id_ogloszenie3 },
+                new zdjecia{ id = 4, url = link4, FK_ogloszenia = id_ogloszenie4 },
+                new zdjecia{ id = 5, url = link5, FK_ogloszenia = id_ogloszenie5 },
             };
 
             zdjeciaCont.zdjeciaDb.AddOrUpdate(zdjecia_wszystkie);
