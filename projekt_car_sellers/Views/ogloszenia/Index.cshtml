@@ -6,12 +6,17 @@
     <div id="marki-lista">
         <ul>
             <li class="btn btn-primary first-li ">
-                Brand
+                @ViewBag.markiModelNazwa
                 <i class="icon-tasks"></i>
             </li>
-            @foreach (var item in ViewBag.marki) {
-                <li class="btn btn-primary">
-                    <a href="/ogloszenia/?id=@item.id">@item.nazwa</a>
+            @foreach (var item in ViewBag.markiModel)
+            {
+                <li class="btn btn-primary ">
+                    @if (@ViewBag.markiModelNazwa == "Brand") {
+                        <a href="/ogloszenia/?marka=@item.id">@item.nazwa</a>
+                    } else {
+                        <a href="/ogloszenia/?marka=@ViewBag.marka&model=@item.id">@item.nazwa</a>
+                    }
                     <i class="icon-th-large icon-white"></i>
                 </li>     
             }
@@ -59,3 +64,27 @@
         }
     </ul>
 </div>
+
+<div class="pagination">
+    <ul id="paginacja">
+    @for (var i = 1; i <= ViewBag.iloscStron; i++)
+    {
+        if (i == ViewBag.strona)
+        {
+            <li class="disabled" >
+                <a>@i</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                @if (@ViewBag.markiModelNazwa == "Brand") {
+                    <a href="/ogloszenia/?marka=@ViewBag.marka&strona=@i">@i</a>
+                } else {
+                    <a href="/ogloszenia/?marka=@ViewBag.marka&model=@ViewBag.model&strona=@i">@i</a>
+                }
+            </li>
+        }
+    }
+    </ul>
+ </div>

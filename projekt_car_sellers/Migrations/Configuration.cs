@@ -207,6 +207,36 @@ namespace projekt_car_sellers.Migrations
                     rodzajPaliwa = "benzyna",
                     typNadwozia = "kombi",
                 },
+                 new ogloszenia {
+                    id = 6, 
+                    cena = 26000, 
+                    FK_lokalizacja = id_lokalizacja_gdynia,
+                    FK_model = id_model_audi,
+                    FK_uzytkownik = id_uztkownik,
+                    opis = "el. szyby, el. lusterka, klimatyzacja, tapicerka skórzana, system nawigacji, centralny zamek, radio, wspomaganie kierownicy, komputer, tempomat, podgrzewane fotele, czujnik deszczu, kierownica wielofunkcyjna, czujnik parkowania",
+                    tytul = "Mercedes-Benz E 200 CDI AVANTGARDE 187 KM VAT 23% ",
+                    rocznik = 2007,
+                    przebieg = 5000,
+                    mocSilnika = 2679,
+                    pojemnoscSilnika = 3300,
+                    rodzajPaliwa = "benzyna",
+                    typNadwozia = "kombi",
+                },
+                 new ogloszenia {
+                    id = 7, 
+                    cena = 16000, 
+                    FK_lokalizacja = id_lokalizacja_gdynia,
+                    FK_model = id_model_audi,
+                    FK_uzytkownik = id_uztkownik,
+                    opis = "Czarna skórzana tapicerka, Instalacja pod Ipod, Zaciski hamulcowe w ¿ó³tym kolorze, Tarcza obrotomierza w ¿ó³tym kolorze, Kontroloa ciœnienia w oponach, Elektrycznie regulowane fotele, Termin dostawy tylko 2 tygodnie. Wystawiamy pe³n¹ fakturê VAT 22%, Mo¿liwy kredyt-leasing",
+                    tytul = "Ferrari California Wersja EU",
+                    rocznik = 2003,
+                    przebieg = 15000,
+                    mocSilnika = 3679,
+                    pojemnoscSilnika = 2300,
+                    rodzajPaliwa = "benzyna",
+                    typNadwozia = "kombi",
+                },
             };
 
             markiCont.ogloszeniaDb.AddOrUpdate(ogloszenia_wszystkie);
@@ -260,17 +290,23 @@ namespace projekt_car_sellers.Migrations
             int id_ogloszenie3 = pobierz_id_ogloszenie(1992);
             int id_ogloszenie4 = pobierz_id_ogloszenie(1952);
             int id_ogloszenie5 = pobierz_id_ogloszenie(1972);
+            int id_ogloszenie6 = pobierz_id_ogloszenie(2007);
+            int id_ogloszenie7 = pobierz_id_ogloszenie(2003);
             var link1 = "http://upload.wikimedia.org/wikipedia/commons/8/8d/Audi_A4_B8_front_20080414.jpg";
             var link2 = "http://gtoss.com/wp-content/uploads/2013/04/Audi-a4-590-189813.jpeg";
             var link3 = "http://niechwiedza.pl/upload/avatar_user/1360234943d699a2d06f90a5ca78ff2d50760c86a0alfa_romeo_159.jpg";
             var link4 = "http://www.autoviva.com/img/photos/036/mercedes_benz_a_150_large_5036.jpg";
             var link5 = "http://img.automobile.de/modellbilder/Honda-CR-V-32877_hon_crv_12_test_1.jpg";
+            var link6 = "http://www.blogcdn.com/green.autoblog.com/media/2009/07/700901_1265600_4256_2832_08c1142_227.jpg";
+            var link7 = "http://i.wp.pl/a/f/jpeg/30788/640-ferrari-laferrari.jpeg";
             zdjecia[] zdjecia_wszystkie = new zdjecia[] {
                 new zdjecia{ id = 1, url = link1, FK_ogloszenia = id_ogloszenie },
                 new zdjecia{ id = 2, url = link2, FK_ogloszenia = id_ogloszenie2 },
                 new zdjecia{ id = 3, url = link3, FK_ogloszenia = id_ogloszenie3 },
                 new zdjecia{ id = 4, url = link4, FK_ogloszenia = id_ogloszenie4 },
                 new zdjecia{ id = 5, url = link5, FK_ogloszenia = id_ogloszenie5 },
+                new zdjecia{ id = 6, url = link6, FK_ogloszenia = id_ogloszenie6 },
+                new zdjecia{ id = 7, url = link7, FK_ogloszenia = id_ogloszenie7 },
             };
 
             zdjeciaCont.zdjeciaDb.AddOrUpdate(zdjecia_wszystkie);

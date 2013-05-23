@@ -158,6 +158,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Class1.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -183,6 +184,10 @@
     <Compile Include="Migrations\201305221306048_test1.cs" />
     <Compile Include="Migrations\201305221306048_test1.Designer.cs">
       <DependentUpon>201305221306048_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305221346275_test3.cs" />
+    <Compile Include="Migrations\201305221346275_test3.Designer.cs">
+      <DependentUpon>201305221346275_test3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -319,6 +324,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\ogloszenia\Index.cshtml" />
+    <Content Include="Views\ogloszenia\podglad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201305221306048_test1.resx">
       <DependentUpon>201305221306048_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305221346275_test3.resx">
+      <DependentUpon>201305221346275_test3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

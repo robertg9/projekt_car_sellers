@@ -278,3 +278,101 @@ footer {
         position: relative;
         right: -65px;
     }
+
+    /*PAGINACJA*/
+
+#paginacja {
+    float: right;
+    width: 200px;
+    position: relative;
+    right: 300px;
+}
+
+/*PODGLAD OGLOSZENIA*/
+
+.zdjecieGlowne {
+    width: 500px;
+    height: 350px;
+    float: left;
+}
+
+#zdjecie-dane {
+    margin-top: 50px;
+}
+
+    #zdjecie-dane .tytul-ogloszenia {
+        width: 300px
+    }
+
+    #zdjecie-dane .cena {
+        float: left;
+        width: 100px;
+        color: #C31513;
+        margin-left: 10px;
+    }
+
+#cena-kontener {
+    width: 500px;
+    float: left;
+}
+
+    #cena-kontener .pln {
+        color: #C31513;
+        float: right;
+        height: 50px;
+        left: -20px;
+        margin-right: 150px;
+        padding-top: 11px;
+        position: relative;
+        width: 240px;
+    }
+
+.napisCena {
+
+}
+
+#zdjecie-dane h3 {
+    width: 100px;
+}
+
+#dane-ogloszenie {
+    float: left;
+    margin-left: 10px;
+}
+
+#dane-ogloszenie td {
+    width: 150px;
+}
+
+#opis-ogloszenia {
+    position: relative;
+    top: -250px;
+    width: 450px;
+}
+
+
+/*REJESTRACJA / LOGIN*/
+
+#login-page,
+#register-page {
+    text-align: center;
+    margin-top: 100px;
+}
+    #login-page li,
+    #register-page li {
+        list-style: none;
+    }
+
+    #login-page .remember {
+         position: relative;
+         right: 380px;
+    }
+
+    #login-page .login {
+        left: 420px;
+        position: relative;
+    }
+
+    #login-page .register {
+        margin-left: 40px;
+    }

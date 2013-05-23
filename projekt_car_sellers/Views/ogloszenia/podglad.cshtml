@@ -1,0 +1,53 @@
+﻿<h2 class="tytul-ogloszenia">
+    @Model.tytul
+</h2>
+
+<div id="zdjecie-dane">
+    <img src="@ViewBag.zdjecie_glowne.url" title="samochod" class="zdjecieGlowne"/>
+    <div id="cena-kontener">
+        <h3 class="cena ">@Model.cena</h3><h4 class="pln">PLN (price is negotiable)</h4>
+     </div>
+    <div id="dane-ogloszenie">
+        <table class="table table-striped">
+            <tr>
+                <td><h6>Year</h6></td>
+                <td><p class="rocznik"><h5>@Model.rocznik</h5></p></td>
+            </tr>
+           <tr>
+                <td><h6>Mileage</h6></td>
+                <td><p class="rocznik"><h5>@Model.przebieg</h5></p></td>
+            </tr>
+             <tr>
+                <td><h6>Capacity</h6></td>
+                <td><p class="rocznik"><h5>@Model.pojemnoscSilnika</h5></p></td>
+            </tr>
+             <tr>
+                <td><h6>Fuel</h6></td>
+                <td><p class="rocznik"><h5>@Model.rodzajPaliwa</h5></p></td>
+            </tr>
+            <tr>
+                <td><h6>Type</h6></td>
+                <td><p class="rocznik"><h5>@Model.typNadwozia</h5></p></td>
+            </tr>
+            <tr>
+                <td><h6>Model</h6></td>
+                <td><p class="rocznik"><h5>@ViewBag.model.nazwa</h5></p></td>
+            </tr>
+            <tr>
+                <td><h6>Brand</h6></td>
+                <td><p class="rocznik"><h5>@ViewBag.marka.nazwa</h5></p></td>
+            </tr>
+            <tr>
+                <td><h6>City</h6></td>
+                <td><p class="rocznik"><h5>@ViewBag.lokalizacja.miasto</h5></p></td>
+            </tr>
+            <tr>
+                <td><h6>Region</h6></td>
+                <td><p class="rocznik"><h5>@ViewBag.region.nazwa</h5></p></td>
+            </tr>
+        </table>
+    </div>
+    <div id="opis-ogloszenia" class="left">
+        @Model.opis
+    </div>
+</div>

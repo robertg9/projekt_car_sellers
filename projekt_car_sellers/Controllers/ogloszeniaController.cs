@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using projekt_car_sellers.App_Start;
 
 namespace projekt_car_sellers.Controllers
 {
@@ -15,28 +16,152 @@ namespace projekt_car_sellers.Controllers
         //
         // GET: /ogloszenia/
 
-        public ActionResult Index()
+        public ActionResult Index(int strona = 1, int marka = 0, int model = 0)
         {
+            ViewBag.model = model;
+            ViewBag.marka = marka;
+            ViewBag.strona = strona;
+            strona = (strona - 1) * 5;
             var viewModel = new all_models();
 
-            ViewBag.marki = viewModel.wszystkie_marki;
+            if (marka == 0)
+            {
+                ViewBag.markiModelNazwa = "Brand";
+                ViewBag.markiModel = viewModel.wszystkie_marki;
+            }
+            else
+            {
+                ViewBag.markiModelNazwa = "Model";
+                ViewBag.markiModel = viewModel.modelDb.Where(m => m.FK_marka == marka).ToList();
+            }
+            if (marka == 0)
+            {
+                var ilosc = (from o in viewModel.ogloszeniaDb
+                             join z in viewModel.zdjeciaDb on o.id equals z.id
 
-            var query = (from o in viewModel.ogloszeniaDb
-                        join z in viewModel.zdjeciaDb on o.id equals z.id
-                        select new ogloszenieZdjecia() { 
-                            id = o.id,
-                            tytul = o.tytul, 
-                            url = z.url, 
-                            rocznik = o.rocznik,
-                            przebieg = o.przebieg,
-                            pojemnoscSilnika = o.pojemnoscSilnika,
-                            rodzajPaliwa = o.rodzajPaliwa,
-                            typNadwozia = o.typNadwozia,
-                            cena = o.cena
-                        }).Take(5).ToList();
-            return View(query);
+                             select new ogloszenieZdjecia(){});
+
+                var query = (from o in viewModel.ogloszeniaDb
+                             join z in viewModel.zdjeciaDb on o.id equals z.id
+
+                             select new ogloszenieZdjecia()
+                             {
+                                 id = o.id,
+                                 tytul = o.tytul,
+                                 url = z.url,
+                                 rocznik = o.rocznik,
+                                 przebieg = o.przebieg,
+                                 pojemnoscSilnika = o.pojemnoscSilnika,
+                                 rodzajPaliwa = o.rodzajPaliwa,
+                                 typNadwozia = o.typNadwozia,
+                                 cena = o.cena
+                             }).OrderBy(o => o.id).Skip(strona).Take(5).ToList();
+
+                int iloscStron = ilosc.Count() / 5;
+                if ((ilosc.Count() % 5) != 0)
+                {
+                    iloscStron = iloscStron + 1;
+                }
+
+                ViewBag.iloscStron = iloscStron;
+
+                return View(query);
+            }
+            else if (marka > 0)
+            {
+                if (model > 0)
+                {
+                    var ilosc_model = (from o in viewModel.ogloszeniaDb
+                                 join z in viewModel.zdjeciaDb on o.id equals z.id
+                                 where o.FK_model == model
+                                 select new ogloszenieZdjecia() { });
+
+                    var query_model = (from o in viewModel.ogloszeniaDb
+                                 join z in viewModel.zdjeciaDb on o.id equals z.id
+                                 where o.FK_model == model
+                                 select new ogloszenieZdjecia()
+                                 {
+                                     id = o.id,
+                                     tytul = o.tytul,
+                                     url = z.url,
+                                     rocznik = o.rocznik,
+                                     przebieg = o.przebieg,
+                                     pojemnoscSilnika = o.pojemnoscSilnika,
+                                     rodzajPaliwa = o.rodzajPaliwa,
+                                     typNadwozia = o.typNadwozia,
+                                     cena = o.cena
+                                 }).OrderBy(o => o.id).Skip(strona).Take(5).ToList();
+
+                    int iloscStron_model = ilosc_model.Count() / 5;
+                    if ((ilosc_model.Count() % 5) != 0)
+                    {
+                        iloscStron_model = iloscStron_model + 1;
+                    }
+
+                    ViewBag.iloscStron = iloscStron_model;
+
+                    return View(query_model);
+                }
+                var modele = viewModel.modelDb.Where(m => m.FK_marka == marka);
+
+                var ilosc = (from o in viewModel.ogloszeniaDb
+                             join m in modele on o.FK_model equals m.id
+                             join z in viewModel.zdjeciaDb on o.id equals z.id
+                             select new ogloszenieZdjecia() { });
+
+                var query = (from o in viewModel.ogloszeniaDb
+                             join m in modele on o.FK_model equals m.id
+                             join z in viewModel.zdjeciaDb on o.id equals z.id
+                             select new ogloszenieZdjecia()
+                             {
+                                 id = o.id,
+                                 tytul = o.tytul,
+                                 url = z.url,
+                                 rocznik = o.rocznik,
+                                 przebieg = o.przebieg,
+                                 pojemnoscSilnika = o.pojemnoscSilnika,
+                                 rodzajPaliwa = o.rodzajPaliwa,
+                                 typNadwozia = o.typNadwozia,
+                                 cena = o.cena
+                             }).OrderBy(o => o.id).Skip(strona).Take(5).ToList();
+
+                int iloscStron = ilosc.Count() / 5;
+                if ((ilosc.Count() % 5) != 0)
+                {
+                    iloscStron = iloscStron + 1;
+                }
+
+                ViewBag.iloscStron = iloscStron;
+                return View(query);
+
+            }
+
+
+            return View();
 
         }
+
+        // GET: /ogloszenia/podglad/
+
+        public ActionResult podglad(int id = 1)
+        {
+            var viewModel = new all_models();
+            var dane_ogloszenie = viewModel.ogloszeniaDb.Where(o => o.id == id).First();
+            var zdjecie_glowne = viewModel.zdjeciaDb.Where(z => z.FK_ogloszenia == id).First();
+            var model = viewModel.modelDb.Where(m => m.id == dane_ogloszenie.FK_model).First();
+            var marka = viewModel.markiDb.Where(mr => mr.id == model.FK_marka).First();
+            var lokalizacja = viewModel.lokalizacjaDb.Where(l => l.id == dane_ogloszenie.FK_lokalizacja).First();
+            var region = viewModel.regionDb.Where(r => r.id == lokalizacja.FK_region).First();
+
+            ViewBag.zdjecie_glowne = zdjecie_glowne;
+            ViewBag.model = model;
+            ViewBag.marka = marka;
+            ViewBag.lokalizacja = lokalizacja;
+            ViewBag.region = region;
+
+            return View(dane_ogloszenie);
+        }
+
 
 
     }
