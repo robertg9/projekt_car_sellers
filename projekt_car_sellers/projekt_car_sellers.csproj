@@ -193,6 +193,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\all_models.cs" />
     <Compile Include="Models\lokalizacja.cs" />
+    <Compile Include="Models\MarkaModel.cs" />
     <Compile Include="Models\marki.cs" />
     <Compile Include="Models\model.cs" />
     <Compile Include="Models\ogloszenia.cs" />
@@ -325,6 +326,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\ogloszenia\Index.cshtml" />
     <Content Include="Views\ogloszenia\podglad.cshtml" />
+    <Content Include="Views\ogloszenia\dodaj.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

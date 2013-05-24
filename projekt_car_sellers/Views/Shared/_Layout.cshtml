@@ -42,6 +42,12 @@
                                 @Html.ActionLink("Cars", "Index", "ogloszenia")
                                 <i class="icon-search"></i>
                             </li>
+                            @if (Request.IsAuthenticated) {
+                                 <li class="btn btn-primary">
+                                    @Html.ActionLink("Add your ad", "dodaj", "ogloszenia")
+                                    <i class="icon-search"></i>
+                                </li>
+                            }
                         </ul>
                     </nav>
                 </div>

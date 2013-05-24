@@ -14,7 +14,6 @@ using projekt_car_sellers.Models;
 namespace projekt_car_sellers.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //

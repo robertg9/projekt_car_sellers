@@ -15,6 +15,12 @@
     margin: auto;
 }
 
+.logoff {
+    height: 20px;
+}
+
+.username,
+#logoff,
 #registerLink {
     color: #fff;
 }
@@ -376,3 +382,44 @@ footer {
     #login-page .register {
         margin-left: 40px;
     }
+
+
+    /*dodaj ogloszenie*/
+
+#dodaj-ogloszenie .tytul {
+    width: 1000px;
+}
+
+#dodaj-ogloszenie .opis {
+    width: 1000px;
+    height: 100px;
+}
+
+#dodaj-ogloszenie .rocznik {
+    width: 70px;
+}
+
+#dodaj-ogloszenie li {
+    width: 170px;
+    list-style:none;
+    margin-right: 10px;
+}
+
+.labelRocznik {
+    position: relative;
+    top: -3px;
+    margin-right: 10px;
+
+}
+
+#dodaj-ogloszenie .model {
+    width: 170px;
+}
+
+#dodaj-ogloszenie .modelli {
+    width: 270px;
+}
+
+#dodaj-ogloszenie ul {
+    height: 100px;
+}

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using projekt_car_sellers.App_Start;
+using WebMatrix.WebData;
+using System.Data;
 
 namespace projekt_car_sellers.Controllers
 {
@@ -37,12 +39,12 @@ namespace projekt_car_sellers.Controllers
             if (marka == 0)
             {
                 var ilosc = (from o in viewModel.ogloszeniaDb
-                             join z in viewModel.zdjeciaDb on o.id equals z.id
+                             join z in viewModel.zdjeciaDb on o.id equals z.FK_ogloszenia
 
                              select new ogloszenieZdjecia(){});
 
                 var query = (from o in viewModel.ogloszeniaDb
-                             join z in viewModel.zdjeciaDb on o.id equals z.id
+                             join z in viewModel.zdjeciaDb on o.id equals z.FK_ogloszenia
 
                              select new ogloszenieZdjecia()
                              {
@@ -55,7 +57,7 @@ namespace projekt_car_sellers.Controllers
                                  rodzajPaliwa = o.rodzajPaliwa,
                                  typNadwozia = o.typNadwozia,
                                  cena = o.cena
-                             }).OrderBy(o => o.id).Skip(strona).Take(5).ToList();
+                             }).OrderByDescending(o => o.id).Skip(strona).Take(5).ToList();
 
                 int iloscStron = ilosc.Count() / 5;
                 if ((ilosc.Count() % 5) != 0)
@@ -72,12 +74,12 @@ namespace projekt_car_sellers.Controllers
                 if (model > 0)
                 {
                     var ilosc_model = (from o in viewModel.ogloszeniaDb
-                                 join z in viewModel.zdjeciaDb on o.id equals z.id
+                                 join z in viewModel.zdjeciaDb on o.id equals z.FK_ogloszenia
                                  where o.FK_model == model
                                  select new ogloszenieZdjecia() { });
 
                     var query_model = (from o in viewModel.ogloszeniaDb
-                                 join z in viewModel.zdjeciaDb on o.id equals z.id
+                                 join z in viewModel.zdjeciaDb on o.id equals z.FK_ogloszenia
                                  where o.FK_model == model
                                  select new ogloszenieZdjecia()
                                  {
@@ -90,7 +92,7 @@ namespace projekt_car_sellers.Controllers
                                      rodzajPaliwa = o.rodzajPaliwa,
                                      typNadwozia = o.typNadwozia,
                                      cena = o.cena
-                                 }).OrderBy(o => o.id).Skip(strona).Take(5).ToList();
+                                 }).OrderByDescending(o => o.id).Skip(strona).Take(5).ToList();
 
                     int iloscStron_model = ilosc_model.Count() / 5;
                     if ((ilosc_model.Count() % 5) != 0)
@@ -106,12 +108,12 @@ namespace projekt_car_sellers.Controllers
 
                 var ilosc = (from o in viewModel.ogloszeniaDb
                              join m in modele on o.FK_model equals m.id
-                             join z in viewModel.zdjeciaDb on o.id equals z.id
+                             join z in viewModel.zdjeciaDb on o.id equals z.FK_ogloszenia
                              select new ogloszenieZdjecia() { });
 
                 var query = (from o in viewModel.ogloszeniaDb
                              join m in modele on o.FK_model equals m.id
-                             join z in viewModel.zdjeciaDb on o.id equals z.id
+                             join z in viewModel.zdjeciaDb on o.id equals z.FK_ogloszenia
                              select new ogloszenieZdjecia()
                              {
                                  id = o.id,
@@ -123,7 +125,7 @@ namespace projekt_car_sellers.Controllers
                                  rodzajPaliwa = o.rodzajPaliwa,
                                  typNadwozia = o.typNadwozia,
                                  cena = o.cena
-                             }).OrderBy(o => o.id).Skip(strona).Take(5).ToList();
+                             }).OrderByDescending(o => o.id).Skip(strona).Take(5).ToList();
 
                 int iloscStron = ilosc.Count() / 5;
                 if ((ilosc.Count() % 5) != 0)
@@ -162,7 +164,66 @@ namespace projekt_car_sellers.Controllers
             return View(dane_ogloszenie);
         }
 
+        // GET: /ogloszenia/dodaj/
+        [Authorize]
+        public ActionResult dodaj(int id = 0)
+        {
+            var viewModel = new all_models();
 
+            var query = (from md in viewModel.modelDb
+                         join mr in viewModel.markiDb on md.FK_marka equals mr.id
+                         select new MarkaModel()
+                         {
+                             id_model = md.id,
+                             nazwa_marka = mr.nazwa,
+                             nazwa_model = md.nazwa
+                         }).ToList();
+
+            var lokal = viewModel.lokalizacjaDb.ToList();
+
+            ViewBag.lokalizacja = lokal;
+
+            ViewBag.model = query;
+
+            return View();
+        }
+
+        // GET: /ogloszenia/zapisz/
+        [Authorize]
+        public void zapisz(string tytul , string opis, int rocznik, int przebieg, decimal cena, int mocSilnika,
+            int pojemnoscSilnika, string rodzajPaliwa, string typNadwozia, string url, int FK_model, int FK_lokalizacja)
+        {
+            var viewModel = new all_models();
+
+            int userid = (int)WebSecurity.CurrentUserId;
+            ogloszenia nowe_ogloszenie = new ogloszenia { 
+                tytul = tytul,
+                opis = opis,
+                rocznik = rocznik,
+                przebieg = przebieg,
+                cena = cena,
+                mocSilnika = mocSilnika,
+                pojemnoscSilnika = pojemnoscSilnika,
+                rodzajPaliwa = rodzajPaliwa,
+                typNadwozia = typNadwozia,
+                FK_model = FK_model,
+                FK_lokalizacja = FK_lokalizacja,
+                FK_uzytkownik = userid
+            };
+
+            viewModel.ogloszeniaDb.Add(nowe_ogloszenie);
+
+            new ogloszeniaContext().SaveChanges();
+            viewModel.SaveChanges();
+
+            zdjecia zdj = new zdjecia { url = url, FK_ogloszenia = nowe_ogloszenie.id };
+
+            viewModel.zdjeciaDb.Add(zdj);
+            new zdjeciaContext().SaveChanges();
+            viewModel.SaveChanges();      
+
+            Response.Redirect("/ogloszenia/");
+        }
 
     }
 
