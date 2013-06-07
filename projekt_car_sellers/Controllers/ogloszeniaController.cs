@@ -173,6 +173,7 @@ namespace projekt_car_sellers.Controllers
         [Authorize]
         public ActionResult dodaj(int id = 0)
         {
+            int userid = (int)WebSecurity.CurrentUserId;
             var viewModel = new all_models();
 
             if (id > 0)
@@ -181,6 +182,11 @@ namespace projekt_car_sellers.Controllers
                 ViewBag.ogloszenie = ogloszenie;
                 var zdjecie = viewModel.zdjeciaDb.Where(z => z.FK_ogloszenia == id).First();
                 ViewBag.zdjecie = zdjecie;
+
+                if (userid != (int)ogloszenie.FK_uzytkownik)
+                {
+                    Response.Redirect("/ogloszenia/");
+                }
             }
             else
             {
