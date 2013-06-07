@@ -423,3 +423,20 @@ footer {
 #dodaj-ogloszenie ul {
     height: 100px;
 }
+
+li .divUsun {
+    bottom: 100px;
+    left: 520px;
+    position: relative;
+}
+
+    li .divUsun .btn {
+        background-image: linear-gradient(to bottom, #FF4003, #FF4003);
+        color: #fff;
+    }
+
+li .edit {
+    bottom: 20px;
+    position: relative;
+    right: 39px;
+}

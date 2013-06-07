@@ -52,7 +52,6 @@
                         <button class="btn">Type</button><h5 class="rodzajPaliwa">@item.typNadwozia</h5>
                     </div>
                 </div>
-
                 <div class="kupTeraz">
                     <a href="/ogloszenia/podglad/?id=@item.id" class="btn btn-success cenaBtn">
                         <p class="left">Buy now</p>
@@ -60,6 +59,15 @@
                         <h5 class="cena">Price  <span class="cenaText">@item.cena</span></h5>
                     </a>
                 </div>
+                 @if (@ViewBag.userId == @item.FK_uzytkownik) {
+                    <div class="divUsun">
+                        <form action="/ogloszenia/usun/" method="post">
+                            <input type="hidden" value="@item.id" name="id"/>
+                            <input type="submit" value="Delete" class="btn usun" />
+                        </form>
+                        <a class="edit" href="/ogloszenia/dodaj/?id=@item.id" >Edit</a>
+                    </div>
+                }
             </li>
         }
     </ul>
@@ -88,3 +96,14 @@
     }
     </ul>
  </div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+    $(".usun").click(function () {
+        if (confirm("Are you sure, you want delete this ad?")) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+</script>

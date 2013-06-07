@@ -50,3 +50,6 @@ C:\Users\X\Documents\Visual Studio 2012\Projects\projekt_car_sellers\projekt_car
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Debug\projekt_car_sellers.Migrations.bazaDanych.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Debug\projekt_car_sellers.Migrations.zmiany.resources
 C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Debug\projekt_car_sellers.csprojResolveAssemblyReference.cache
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Debug\projekt_car_sellers.Migrations.test.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Debug\projekt_car_sellers.Migrations.test1.resources
+C:\Users\X\documents\visual studio 2012\Projects\projekt_car_sellers\projekt_car_sellers\obj\Debug\projekt_car_sellers.Migrations.test3.resources

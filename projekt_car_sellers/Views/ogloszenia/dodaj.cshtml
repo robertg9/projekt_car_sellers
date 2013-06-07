@@ -1,37 +1,37 @@
 ﻿<form id="dodaj-ogloszenie" action="/ogloszenia/zapisz" method="post" >
 
     <label for="Title"><h4>Ad Title</h4></label>
-    <input value="" type="text" size="100" name="tytul" class="tytul" maxlength="120" />
+    <input value="@ViewBag.ogloszenie.tytul" type="text" size="100" name="tytul" class="tytul" maxlength="120" />
     <label for="Description"><h4>Description</h4></label>
-    <textarea rows="3" cols="100" name="opis" class="opis" maxlength="1000"></textarea>
+    <textarea rows="3" cols="100" name="opis" class="opis" maxlength="1000" >@ViewBag.ogloszenie.opis</textarea>
     <ul>
         <li class="left">
             <label for="Year" class="rocznik left labelRocznik"><h4 class="labelRocznik">Year</h4></label>
-            <input value="" type="number" size="4" name="rocznik" class="rocznik right" maxlength="4" />
+            <input value="@ViewBag.ogloszenie.rocznik" type="number" size="4" name="rocznik" class="rocznik right" maxlength="4" />
         </li>
         <li class="left">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Mileage</h4></label>
-            <input value="" type="number" size="10" name="przebieg" class="rocznik right" maxlength="14" />
+            <input value="@ViewBag.ogloszenie.przebieg" type="number" size="10" name="przebieg" class="rocznik right" maxlength="14" />
         </li>
         <li class="left">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Price</h4></label>
-            <input value="" type="number" size="10" name="cena" class="rocznik right" maxlength="10" />
+            <input value="@ViewBag.ogloszenie.cena" type="number" size="10" name="cena" class="rocznik right" maxlength="10" />
         </li>
         <li class="left">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Power</h4></label>
-            <input value="" type="number" size="10" name="mocSilnika" class="rocznik right" maxlength="14" />
+            <input value="@ViewBag.ogloszenie.mocSilnika" type="number" size="10" name="mocSilnika" class="rocznik right" maxlength="14" />
         </li>
          <li class="left">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Capacity</h4></label>
-            <input value="" type="number" size="10" name="pojemnoscSilnika" class="rocznik right" maxlength="14" />
+            <input value="@ViewBag.ogloszenie.pojemnoscSilnika" type="number" size="10" name="pojemnoscSilnika" class="rocznik right" maxlength="14" />
         </li>
         <li class="left">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Fuel</h4></label>
-            <input value="" type="text" size="30" name="rodzajPaliwa" class="rocznik right" maxlength="24" />
+            <input value="@ViewBag.ogloszenie.rodzajPaliwa" type="text" size="30" name="rodzajPaliwa" class="rocznik right" maxlength="24" />
         </li>
          <li class="left">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Body</h4></label>
-            <input value="" type="text" size="30" name="typNadwozia" class="rocznik right" maxlength="24" />
+            <input value="@ViewBag.ogloszenie.typNadwozia" type="text" size="30" name="typNadwozia" class="rocznik right" maxlength="24" />
         </li>
         <li class="left modelli">
             <label for="Mileage" class="rocznik left labelRocznik"><h4 class="labelRocznik">Model</h4></label>
@@ -53,7 +53,7 @@
          </li>
      </ul>
      <label for="Title"><h4>Image</h4></label>
-     <input value="" type="text" size="100" name="url" class="tytul" maxlength="1400" />
+     <input value="@ViewBag.zdjecie.url" type="text" size="100" name="url" class="tytul" maxlength="1400" />
 
     <input type="submit" value="Save Ad" class="btn btn-primary" />
 </form>

@@ -20,6 +20,8 @@ namespace projekt_car_sellers.Controllers
 
         public ActionResult Index(int strona = 1, int marka = 0, int model = 0)
         {
+            int userid = (int)WebSecurity.CurrentUserId;
+            ViewBag.userId = userid;
             ViewBag.model = model;
             ViewBag.marka = marka;
             ViewBag.strona = strona;
@@ -56,7 +58,8 @@ namespace projekt_car_sellers.Controllers
                                  pojemnoscSilnika = o.pojemnoscSilnika,
                                  rodzajPaliwa = o.rodzajPaliwa,
                                  typNadwozia = o.typNadwozia,
-                                 cena = o.cena
+                                 cena = o.cena,
+                                 FK_uzytkownik = o.FK_uzytkownik
                              }).OrderByDescending(o => o.id).Skip(strona).Take(5).ToList();
 
                 int iloscStron = ilosc.Count() / 5;
@@ -91,7 +94,8 @@ namespace projekt_car_sellers.Controllers
                                      pojemnoscSilnika = o.pojemnoscSilnika,
                                      rodzajPaliwa = o.rodzajPaliwa,
                                      typNadwozia = o.typNadwozia,
-                                     cena = o.cena
+                                     cena = o.cena,
+                                     FK_uzytkownik = o.FK_uzytkownik
                                  }).OrderByDescending(o => o.id).Skip(strona).Take(5).ToList();
 
                     int iloscStron_model = ilosc_model.Count() / 5;
@@ -124,7 +128,8 @@ namespace projekt_car_sellers.Controllers
                                  pojemnoscSilnika = o.pojemnoscSilnika,
                                  rodzajPaliwa = o.rodzajPaliwa,
                                  typNadwozia = o.typNadwozia,
-                                 cena = o.cena
+                                 cena = o.cena,
+                                 FK_uzytkownik = o.FK_uzytkownik
                              }).OrderByDescending(o => o.id).Skip(strona).Take(5).ToList();
 
                 int iloscStron = ilosc.Count() / 5;
@@ -170,6 +175,32 @@ namespace projekt_car_sellers.Controllers
         {
             var viewModel = new all_models();
 
+            if (id > 0)
+            {
+                var ogloszenie = viewModel.ogloszeniaDb.Find(id);
+                ViewBag.ogloszenie = ogloszenie;
+                var zdjecie = viewModel.zdjeciaDb.Where(z => z.FK_ogloszenia == id).First();
+                ViewBag.zdjecie = zdjecie;
+            }
+            else
+            {
+                ogloszenia ogloszenie = new ogloszenia
+                {
+                    opis = "",
+                    tytul = "",
+                    rocznik = 0,
+                    przebieg = 0,
+                    cena = 0,
+                    mocSilnika = 0,
+                    pojemnoscSilnika = 0,
+                    rodzajPaliwa = "",
+                    typNadwozia = ""
+                };
+                ViewBag.ogloszenie = ogloszenie;
+                var zdjecie = new zdjecia { url = "" };
+                ViewBag.zdjecie = zdjecie;
+            } 
+
             var query = (from md in viewModel.modelDb
                          join mr in viewModel.markiDb on md.FK_marka equals mr.id
                          select new MarkaModel()
@@ -184,6 +215,7 @@ namespace projekt_car_sellers.Controllers
             ViewBag.lokalizacja = lokal;
 
             ViewBag.model = query;
+
 
             return View();
         }
@@ -225,6 +257,18 @@ namespace projekt_car_sellers.Controllers
             Response.Redirect("/ogloszenia/");
         }
 
+        [Authorize]
+        public void usun(int id)
+        {
+            var viewModel = new all_models();
+            var ogloszenie = viewModel.ogloszeniaDb.Find(id);
+            viewModel.ogloszeniaDb.Remove(ogloszenie);
+
+            viewModel.SaveChanges();
+            Response.Redirect("/ogloszenia/");
+        }
+
     }
 
 }
+

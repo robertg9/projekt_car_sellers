@@ -16,6 +16,7 @@ namespace projekt_car_sellers.Models
         public string rodzajPaliwa { get; set; }
         public decimal cena { get; set; }
         public string typNadwozia { get; set; }
+        public int FK_uzytkownik { get; set; }
 
     }
 }
